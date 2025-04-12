@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "dropper-helper:block/arrow_block" },
+    "facing=west": { "model": "dropper-helper:block/arrow_block", "y": 90 },
+    "facing=north": { "model": "dropper-helper:block/arrow_block", "y": 180 },
+    "facing=east": { "model": "dropper-helper:block/arrow_block", "y": 270 }
+  }
+}

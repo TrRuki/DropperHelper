@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "dropper-helper",
+	"version": "${version}",
+	"name": "Dropper Helper",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"TrRuki"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/"
+	},
+	"license": "MIT",
+	"icon": "assets/dropper-helper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.trruki.dropper_helper.DropperHelper"
+		],
+		"fabric-datagen": [
+			"me.trruki.dropper_helper.DropperHelperDataGenerator"
+		],
+		"client": [
+			"me.trruki.dropper_helper.DropperHelperClient"
+		],
+		"modmenu": [
+			"me.trruki.dropper_helper.DropperHelperModMenu"
+		]
+
+	},
+	"mixins": [
+		"dropper-helper.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"cloth-config": "*",
+		"modmenu": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"assets": {
+		"namespace": "dropper-helper"
+	}
+}
