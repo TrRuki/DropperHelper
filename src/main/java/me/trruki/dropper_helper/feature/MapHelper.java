@@ -5,6 +5,8 @@ import me.trruki.dropper_helper.JsonDB;
 import me.trruki.dropper_helper.ScoreboardManager;
 import me.trruki.dropper_helper.block.ModBlocks;
 import me.trruki.dropper_helper.block.custom.ArrowBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
