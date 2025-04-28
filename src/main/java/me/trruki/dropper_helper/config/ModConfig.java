@@ -42,7 +42,19 @@ public class ModConfig {
         saveConfig();
     }
 
+    public static boolean getDirectionArrow() {
+        return CONFIG_DATA.directionArrow;
+    }
+
+
+    public static void setDirectionArrow(boolean directionArrow) {
+        CONFIG_DATA.directionArrow = directionArrow;
+        saveConfig();
+    }
+
+
     public static class ConfigData {
         public boolean pathHighlighter = true;
+        public boolean directionArrow = true;
     }
 }

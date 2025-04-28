@@ -3,7 +3,7 @@
 	"id": "dropper-helper",
 	"version": "${version}",
 	"name": "Dropper Helper",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod helps you in dropper mini game in hypixel.net server!",
 	"authors": [
 		"TrRuki"
 	],
@@ -12,7 +12,7 @@
 	},
 	"license": "MIT",
 	"icon": "assets/dropper-helper/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"me.trruki.dropper_helper.DropperHelper"

@@ -5,6 +5,9 @@ import me.trruki.dropper_helper.feature.MapHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.decoration.DisplayEntity;
 
 import java.util.Objects;
 
@@ -17,6 +20,9 @@ public class DropperHelperClient implements ClientModInitializer {
             if (client.world != null && client.world.getScoreboard() != null && ScoreboardManager.getRawDisplayName(client.world.getScoreboard()) != null) {
                 if (client.world != null && Objects.equals(ScoreboardManager.getRawDisplayName(client.world.getScoreboard()), "DROPPER")) {
                     MapHelper.tick(client);
+                }
+                if (client.world != null && client.world.getScoreboard() != null && ScoreboardManager.getRawDisplayName(client.world.getScoreboard()) != null && ScoreboardManager.getName(client.world.getScoreboard()) != null) {
+                    
                 }
             }
         });

@@ -5,6 +5,7 @@ import me.trruki.dropper_helper.JsonDB;
 import me.trruki.dropper_helper.ScoreboardManager;
 import me.trruki.dropper_helper.block.ModBlocks;
 import me.trruki.dropper_helper.block.custom.ArrowBlock;
+import me.trruki.dropper_helper.config.ModConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
@@ -32,8 +33,12 @@ public class MapHelper {
         }
         if (curMap == null) {return;}
         if (!JsonDB.getJson().getAsJsonObject("maps").has(curMap)) {return;}
+        if (ModConfig.getPathHighlighter()) {pathHighlighter(client, curMap);}
+        if (ModConfig.getDirectionArrow()) {directionArrow(client, curMap);}
+    }
+
+    private static void pathHighlighter(MinecraftClient client, String curMap){
         JsonArray highlightCoords = JsonDB.getJson().getAsJsonObject("maps").getAsJsonObject(curMap).getAsJsonArray("highlight");
-        JsonArray arrowCoords = JsonDB.getJson().getAsJsonObject("maps").getAsJsonObject(curMap).getAsJsonArray("arrow");
         int x, y, z;
         for (int i = 0; i < highlightCoords.size(); i++){
             JsonArray coord = highlightCoords.get(i).getAsJsonArray();
@@ -42,6 +47,11 @@ public class MapHelper {
             z = coord.get(2).getAsInt();
             client.world.setBlockState(new BlockPos(x,y,z), ModBlocks.RED_BLOCK.getDefaultState());
         }
+    }
+
+    private static void directionArrow(MinecraftClient client, String curMap){
+        JsonArray arrowCoords = JsonDB.getJson().getAsJsonObject("maps").getAsJsonObject(curMap).getAsJsonArray("arrow");
+        int x, y, z;
         String facing;
         for (int i = 0; i < arrowCoords.size(); i++){
             JsonArray coord = arrowCoords.get(i).getAsJsonArray();
@@ -53,5 +63,3 @@ public class MapHelper {
         }
     }
 }
-
-//[46, 249, -209], [45, 249, -209], [44, 249, -209]
